@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %title David Silveira - #{t.site.title}
+    %link(rel="stylesheet" href="/css/bootstrap.min.css")
+    %link(rel="stylesheet" href="/css/bootstrap-responsive.min.css")
+    %link(rel="stylesheet" href="/css/style.css")
+  %body.preview(data-spy='scroll' data-target='.subnav' data-offset='0')
+    #wrapper
+      %header.jumbotron.subhead{:id => 'overview'}
+        .row
+          .span12
+            %h2 David Silveira
+            %p.muted 
+              %em #{@phrase}
+        .subnav
+          %ul.nav.nav-pills
+            %li
+              %a(href="/#{@locale}") #{t.site.menu.home}
+            %li
+              %a(href="/#{@locale}/blog") #{t.site.menu.blog}
+            %li
+              %a(href="/#{@locale}/notes") #{t.site.menu.about}
+            .pull-right
+              .surprise-title
+                %p.muted David Silveira
+      #content
+        = yield
+      %footer.footer
+        %p.muted
+          #{t.site.footer.credits}
+          %a(href='http://www.sinatrarb.com/') Sinatra
+          , 
+          %a(href='http://www.haml.com/') HAML
+          #{t.site.and}  
+          %a(href='http://twitter.github.com/bootstrap/') Twitter Bootstrap
+    %script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    %script(src='/js/bootstrap.min.js')
+    %script(src='/js/app.js')

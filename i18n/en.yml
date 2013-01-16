@@ -1,0 +1,47 @@
+site:
+  title: just another guy
+  and: and
+  menu:
+    home: Home
+    blog: blog
+    about: about
+  footer:
+    credits: This site was built using Sinatra
+
+blog:
+  title: Blog is coming soon
+  explanation: I'm looking for a Blog ruby gem... if you know one ping me :)
+
+about:
+  title: Cosas a tener en cuenta del sitio
+  body: !!html
+    <h4>Why Sinatra?</h4>
+        <p>
+          Because is an easy and light Ruby framework. Easy to use, and easy to extend. And mainly... because is much better than Silex
+        </p>
+        <h4>Why Ruby?</h4>
+        <p>
+          PHP is not a challenge for Ruby. Honestly, Ruby is far away much better than PHP. If JAVA is a Lego and Ruby is Play doh, I don't know what is PHP compared with them. I'm very thankful to PHP for all the jobs, and the chance to learn lot of things around the development, but honestly, there is no way back to PHP in my life.
+        </p>
+
+index:
+  body: !!html
+    <p><b>Thanks for visit my page.</b> If you have interest about my professional services, please feel free to visit my resume visinting my
+    <a href='http://www.linkedin.com/in/jorgesilveira' target='_blank'>LinkedIn Profile</a>
+    </p>
+    <p>
+    If you're not here because of that and want to read some interesting articles written in spanish you can take a ride for
+    <a href='/en/blog'>the blog.</a>
+    </p>
+    <p>
+    Finally, if nothing what I said above match with your expectations, honestly, no idea what can I offer you. I have no twitter, and I'm about to close my Facebook account... Oh! wait a minute, I have a
+    <a href='https://github.com/aboyon' target='_blank'>Github profile</a>
+    and a very detailed profile in
+    <a href='http://www.last.fm/user/aboyon' target='_blank'>Last.fm</a>
+    perhaps you may find something interesting there... (in Last.fm I guess...)
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="alert alert-info">
+      I am not accepting any new work in the near term future, so far.
+    </div>

@@ -1,0 +1,51 @@
+site:
+  title: un testigo de la vida...
+  and: y
+  menu:
+    home: Inicio
+    blog: Blog
+    about: Acerca
+  footer:
+    credits: Este sitio lo hice usando Sinatra
+
+blog:
+  title: Todavia no termine el blog...
+  explanation: Porque estoy buscando alguna gema en ruby que me simplifique el laburo. Si sabes de una, adelante!
+
+about:
+  title: Cosas a tener en cuenta del sitio
+  body: !!html
+    <h4>Porque usaste sinatra?</h4>
+        <p>
+          Porque es un framework, simple, <b>muy facil de aprender</b> y facil de usar. Tambien es muy facil de extender y gracias
+          a las bondades de Ruby, se hace muy facil desarrollar, de una manera limpia. Y principalmente porque este es un sitio chico
+          y Sinatra es por lejos mucho mejor que Silex
+        </p>
+        <h4>Para, te vendiste a Ruby?</h4>
+        <p>
+          Ufff... que frase tan trillada, y triste. Lamentablemente escucho eso a diario
+        </p>
+
+index:
+  body: !!html
+    <p>
+    <b>Gracias por visitar mi pagina!</b> si estas aca porque te interesan mis servicios profesionales te invito a que visites mi
+    <a href='http://www.linkedin.com/in/jorgesilveira' target='_blank'>Perfil de linkedIn</a>
+    </p>
+    <p>
+    Si, en cambio, no te interesa ver en que laburo y como laburo, podes distraerte un rato leyendo alguno de mis delires en
+    <a href='/es/blog'>mi blog.</a>
+    </p>
+    <p>
+    Y bueno, si nada de lo anteriormente nombrado te interesa ya no se que ofrecerte, honestamente. No tengo twiter y encima de todo
+    estoy por cerrar mi cuenta de facebook... Ah no! espera! acabo de recordar que tengo 
+    <a href='https://github.com/aboyon' target='_blank'>Una cuenta en</a>
+    y un perfil <b>muy detallado</b> en
+    <a href='http://www.last.fm/user/aboyon' target='_blank'>Last.fm</a>
+    quizas encuentres algo interesante ahi... (o sea en Last.fm, bah no se.. supongo)
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="alert alert-info">
+      Por el momento no estoy tomando trabajo freelance, ni tengo un interes en un cambio laboral.
+    </div>
