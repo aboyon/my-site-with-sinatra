@@ -19,7 +19,6 @@ def random_phrases
   @phrases
 end
 
-# R18n::I18n.default = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
 R18n::I18n.default do |default|
   if ["en","es"].includes?(request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first)
     default = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/[a-z]{2}/).first

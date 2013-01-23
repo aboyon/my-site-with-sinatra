@@ -13,7 +13,7 @@ blog:
   explanation: I'm looking for a Blog ruby gem... if you know one ping me :)
 
 about:
-  title: Cosas a tener en cuenta del sitio
+  title: Some things I want to say...
   body: !!html
     <h4>Why Sinatra?</h4>
         <p>
