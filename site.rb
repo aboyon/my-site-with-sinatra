@@ -8,6 +8,7 @@ require 'haml'
 require 'sinatra/r18n'
 
 set :haml, :format => :html5
+set :allowed_lang => ["en",""]
 
 def random_phrases
   @phrases = []
@@ -20,7 +21,7 @@ def random_phrases
 end
 
 R18n::I18n.default do |default|
-  if ["en","es"].includes?(request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first)
+  if R18n.available_locales.map(&:code).include?(request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first)
     default = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/[a-z]{2}/).first
   end
   default|= 'en'
@@ -34,13 +35,9 @@ class Site < Sinatra::Base
 end
 
 before do
-  current_locale = request.path_info.scan(/[a-z]{2}/).first
+  lang_found = request.path_info.scan(/[a-z]{2}/).first
+  @locale = (R18n.available_locales.map(&:code).include?(lang_found)) ? lang_found : R18n::I18n.default
   @phrase = random_phrases.sample
-  if !current_locale.nil?
-    @locale = current_locale
-  else
-    @locale = R18n::I18n.default
-  end
 end
 
 get '/' do
@@ -53,6 +50,15 @@ end
 
 get '/:locale/blog' do
   haml :blog_index
+end
+
+get '/blog/post/:slug' do
+  filename = "views/auto-generated-views/#{params[:slug].downcase}.haml";
+  if File.exists?(filename) 
+    haml :blog_post, :locals => { :resource => filename }
+  else
+    haml :not_found
+  end
 end
 
 get '/:locale/notes' do

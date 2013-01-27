@@ -1,0 +1,6 @@
+%p.muted.pull-right
+  Written on #{File.ctime(resource)}
+
+= Haml::Engine.new(File.read(resource)).render
+
+%h3 Comments options

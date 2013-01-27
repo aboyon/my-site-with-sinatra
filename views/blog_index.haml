@@ -2,4 +2,4 @@
 %p.muted 
   #{t.blog.explanation}
 
-= render_file('auto-generated-views/blog_index.haml')
+= Haml::Engine.new(File.read("views/auto-generated-views/#{@locale}_blog_index.haml")).render
