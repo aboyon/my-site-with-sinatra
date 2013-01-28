@@ -8,7 +8,7 @@ require 'haml'
 require 'sinatra/r18n'
 
 set :haml, :format => :html5
-set :allowed_lang => ["en",""]
+set :blog_static_pages => "views/auto-generated-views/blog/"
 
 def random_phrases
   @phrases = []
@@ -49,11 +49,26 @@ get '/:locale' do
 end
 
 get '/:locale/blog' do
-  haml :blog_index
+  entries = []
+  Dir.entries("#{settings.blog_static_pages}/#{@locale}").each do |filename|
+    unless ["..","."].include?(filename)
+      content = Haml::Engine.new(File.read("#{settings.blog_static_pages}/#{@locale}/#{filename}")).render
+      title = content.scan(/<!\s*--(.*?)(--\>)/).first
+      entries.push({
+        :written => File.ctime("#{settings.blog_static_pages}/#{@locale}/#{filename}"),
+        :link => File.basename(filename,'.haml'),
+        :title => title.first,
+        :preview => content.scan(/<!\s*--(.*?)(--\>)/).last.first
+      }) unless title.nil?
+    end
+  end
+  haml :blog_index, :locals => { 
+    :entries => entries
+  }
 end
 
-get '/blog/post/:slug' do
-  filename = "views/auto-generated-views/#{params[:slug].downcase}.haml";
+get '/:locale/blog/post/:slug' do
+  filename = "#{settings.blog_static_pages}/#{@locale}/#{params[:slug].downcase}.haml";
   if File.exists?(filename) 
     haml :blog_post, :locals => { :resource => filename }
   else

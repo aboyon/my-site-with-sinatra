@@ -2,4 +2,11 @@
 %p.muted 
   #{t.blog.explanation}
 
-= Haml::Engine.new(File.read("views/auto-generated-views/#{@locale}_blog_index.haml")).render
+- entries.each do |entry|
+  %div.span6.post_block
+    %p.muted.pull-right(title="#{entry[:written]}")
+      #{entry[:written]}
+    %h5
+      %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title].to_s}
+      %p.muted
+        #{entry[:preview].to_s}
