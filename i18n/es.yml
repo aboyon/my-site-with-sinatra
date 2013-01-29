@@ -5,6 +5,7 @@ site:
     home: Inicio
     blog: Blog
     about: Acerca
+    languages: Otros lenguajes
   footer:
     credits: Este sitio lo hice usando Sinatra
 

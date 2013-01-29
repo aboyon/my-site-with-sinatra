@@ -2,7 +2,6 @@ source :rubygems
 
 gem 'sinatra', :git => "git://github.com/sinatra/sinatra.git"
 
-gem 'activerecord', '~> 3.0'
 gem 'haml'
 
 # let's give some styling to the page

@@ -1,11 +1,8 @@
 # 
 # well.. here is where the magic happens...
 #
-
-require 'active_record'
 require 'sinatra'
-require 'haml'
-require 'sinatra/r18n'
+require_relative 'initializer'
 
 set :haml, :format => :html5
 set :blog_static_pages => "views/auto-generated-views/blog/"
@@ -15,7 +12,6 @@ def random_phrases
   @phrases << "how many times, can a man watch the sunrise, over his head without feeling free"
   @phrases << "Lazy days, crazy dolls"
   @phrases << "My heart is a pure sun and the sky is black"
-  @phrases << "I can sit for hours here and watch the emerald feathers play"
   @phrases << "I can sit for hours here and watch the emerald feathers play"
   @phrases
 end
@@ -38,6 +34,7 @@ before do
   lang_found = request.path_info.scan(/[a-z]{2}/).first
   @locale = (R18n.available_locales.map(&:code).include?(lang_found)) ? lang_found : R18n::I18n.default
   @phrase = random_phrases.sample
+  @base_url = "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
 end
 
 get '/' do
@@ -70,7 +67,12 @@ end
 get '/:locale/blog/post/:slug' do
   filename = "#{settings.blog_static_pages}/#{@locale}/#{params[:slug].downcase}.haml";
   if File.exists?(filename) 
-    haml :blog_post, :locals => { :resource => filename }
+    haml :blog_post, :locals => { 
+      :resource     => filename,
+      :permalink    => "#{@base_url}#{request.path_info}",
+      :comment_hash => Digest::MD5.hexdigest(request.path_info),
+      :title        => params[:slug]
+    }
   else
     haml :not_found
   end

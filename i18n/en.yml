@@ -5,6 +5,7 @@ site:
     home: Home
     blog: blog
     about: about
+    languages: Other languages
   footer:
     credits: This site was built using Sinatra
 
@@ -43,5 +44,5 @@ index:
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <div class="alert alert-info">
-      I am not accepting any new work in the near term future, so far.
+      I am not accepting any new work in the near future, so far.
     </div>

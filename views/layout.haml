@@ -2,38 +2,52 @@
 %html
   %head
     %title David Silveira - #{t.site.title}
+    %meta{ :name => 'viewport', :content => 'width=device-width, initial-scale=1.0, maximum-scale=1.0' }
     %link(rel="stylesheet" href="/css/bootstrap.min.css")
     %link(rel="stylesheet" href="/css/bootstrap-responsive.min.css")
     %link(rel="stylesheet" href="/css/style.css")
   %body.preview(data-spy='scroll' data-target='.subnav' data-offset='0')
-    #wrapper
-      %header.jumbotron.subhead{:id => 'overview'}
-        .row
-          .span12
-            %h2 David Silveira
-            %p.muted 
-              %em #{@phrase}
-        .subnav
-          %ul.nav.nav-pills
-            %li
-              %a(href="/#{@locale}") #{t.site.menu.home}
-            %li
-              %a(href="/#{@locale}/blog") #{t.site.menu.blog}
-            %li
-              %a(href="/#{@locale}/notes") #{t.site.menu.about}
-            .pull-right
-              .surprise-title
-                %p.muted David Silveira
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar.collapsed(data-toggle="collapse" data-target=".nav-collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand(href="/") David Silveira
+          #main-menu.nav-collapse
+            %ul.nav
+              %li
+                %a(href="/#{@locale}") #{t.site.menu.home}
+              %li
+                %a(href="/#{@locale}/blog") #{t.site.menu.blog}
+              %li
+                %a(href="/#{@locale}/notes") #{t.site.menu.about}
+              %li.dropdown
+                %a.dropdown-toggle(href="#" data-toggle="dropdown") #{t.site.menu.languages}
+                %ul.dropdown-menu(id="swatch-menu")
+                  - r18n.available_locales.each do |locale|
+                    %li
+                      %a( href="/#{locale.code}" )= locale.title
+    #wrapper.container
+      %header
+        %h4.muted
+          #{@phrase}
+
       #content
         = yield
-      %footer.footer
-        %p.muted
-          #{t.site.footer.credits}
-          %a(href='http://www.sinatrarb.com/') Sinatra
-          , 
-          %a(href='http://www.haml.com/') HAML
-          #{t.site.and}  
-          %a(href='http://twitter.github.com/bootstrap/') Twitter Bootstrap
+    %footer.footer.container
+      %p.auxiliar-languages
+        - r18n.available_locales.each do |locale|
+          %a( href="/#{locale.code}" )= locale.title
+          |
+      %p
+        #{t.site.footer.credits}
+        %a(href='http://www.sinatrarb.com/') Sinatra
+        , 
+        %a(href='http://www.haml.com/') HAML
+        #{t.site.and}  
+        %a(href='http://twitter.github.com/bootstrap/') Twitter Bootstrap
     %script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     %script(src='/js/bootstrap.min.js')
     %script(src='/js/app.js')
