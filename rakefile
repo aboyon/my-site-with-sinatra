@@ -4,7 +4,7 @@ require 'fileutils'
 namespace :app do
   desc "Install repare the blog app"
   task(:blog) do
-    target_folder = "views/auto-generated-views/bloga"
+    target_folder = "views/auto-generated-views/blog"
     puts "***********************************************************************"
     puts "Creating folder #{target_folder}..."
     puts "Current location: #{Dir.pwd}"
