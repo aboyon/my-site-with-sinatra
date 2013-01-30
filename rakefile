@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'fileutils'
 
 namespace :app do
   desc "Install repare the blog app"
@@ -7,12 +8,12 @@ namespace :app do
     puts "***********************************************************************"
     puts "Creating folder #{target_folder}..."
     puts "Current location: #{Dir.pwd}"
+    puts "HEY! #{target_folder} already exists!" if File.directory?(target_folder)
     unless File.directory?(target_folder)
-      Dir.mkdir(target_folder, 0777)
+      FileUtils.mkdir_p target_folder
       puts "folder for static blog content created successfully!"
       puts "now you should run rake:app:blog in order to push the new posts..."
     end
-    puts "HEY! #{target_folder} already exists!" if File.directory?(target_folder)
     puts "***********************************************************************"
   end
 
