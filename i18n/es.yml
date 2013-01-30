@@ -50,3 +50,7 @@ index:
     <div class="alert alert-info">
       Por el momento no estoy tomando trabajo freelance, ni tengo un interes en un cambio laboral.
     </div>
+
+not_found:
+  header: Opalala... algo se rompio che...
+  body: La pagina que buscas se fue al cielo de las paginas 404...

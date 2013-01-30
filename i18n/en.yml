@@ -46,3 +46,7 @@ index:
     <div class="alert alert-info">
       I am not accepting any new work in the near future, so far.
     </div>
+
+not_found:
+  header: Ups! something went wrong...
+  body: the page you're looking for is not available

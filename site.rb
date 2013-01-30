@@ -7,33 +7,10 @@ require_relative 'initializer'
 set :haml, :format => :html5
 set :blog_static_pages => "views/auto-generated-views/blog/"
 
-def random_phrases
-  @phrases = []
-  @phrases << "how many times, can a man watch the sunrise, over his head without feeling free"
-  @phrases << "Lazy days, crazy dolls"
-  @phrases << "My heart is a pure sun and the sky is black"
-  @phrases << "I can sit for hours here and watch the emerald feathers play"
-  @phrases
-end
-
-R18n::I18n.default do |default|
-  if R18n.available_locales.map(&:code).include?(request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first)
-    default = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/[a-z]{2}/).first
-  end
-  default|= 'en'
-end
-
-class Site < Sinatra::Base
-  
-  register Sinatra::R18n
-  set :root, File.dirname(__FILE__)
-
-end
-
 before do
   lang_found = request.path_info.scan(/[a-z]{2}/).first
   @locale = (R18n.available_locales.map(&:code).include?(lang_found)) ? lang_found : R18n::I18n.default
-  @phrase = random_phrases.sample
+  @phrase = SiteApp::random_phrases.sample
   @base_url = "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
 end
 
