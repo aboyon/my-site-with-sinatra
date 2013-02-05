@@ -11,3 +11,4 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # Internationalization
 
 gem "sinatra-r18n", "~> 1.1.3"
+gem "nokogiri", "~> 1.5.6"

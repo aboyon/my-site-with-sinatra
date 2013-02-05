@@ -7,6 +7,6 @@
     %p.muted.pull-right(title="#{entry[:written]}")
       #{entry[:written]}
     %h5
-      %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title].to_s}
+      %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title]}
       %p.muted
         #{entry[:preview].to_s}
