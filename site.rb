@@ -27,13 +27,17 @@ get '/:locale/blog' do
   entries = []
   Dir.entries("#{settings.blog_static_pages}/#{@locale}").each do |filename|
     unless ["..","."].include?(filename)
-      post = SiteApp.parse_post("#{settings.blog_static_pages}/#{@locale}/#{filename}")
-      entries.push({
-        :written  => post[:created_at],
-        :link     => post[:link],
-        :preview  => post[:preview],
-        :title    => post[:title]
-      }) unless post[:title].nil?
+      begin
+        post = SiteApp.parse_post("#{settings.blog_static_pages}/#{@locale}/#{filename}")
+        entries.push({
+          :written  => post[:created_at],
+          :link     => post[:link],
+          :preview  => post[:preview],
+          :title    => post[:title]
+        }) unless post[:title].nil?
+      rescue
+        
+      end
     end
   end
   haml :blog_index, :locals => { 

@@ -12,10 +12,10 @@ module SiteApp
     extension = File.extname(filename)
     case extension
       when '.haml'
-        raw = Haml::Engine.new(File.read(filename)).render
+        raw = Haml::Engine.new(File.read(filename).force_encoding('utf-8')).render
         content = Nokogiri::HTML(raw)
       when '.html'
-        raw = File.read(filename)
+        raw = File.read(filename).force_encoding('utf-8')
         content = Nokogiri::HTML(raw)
     end
     post = {
