@@ -1,7 +1,8 @@
 %p.muted.pull-right
-  Written on #{File.ctime(resource)}
+  Written on #{created_at}
 
-= Haml::Engine.new(File.read(resource)).render
+%div.post_container
+  #{raw}
 
 %div.discuss_comment
   %div.disqus_thread

@@ -12,28 +12,29 @@ module SiteApp
     extension = File.extname(filename)
     case extension
       when '.haml'
-        content = Nokogiri::HTML(Haml::Engine.new(File.read(filename)).render)
+        raw = Haml::Engine.new(File.read(filename)).render
+        content = Nokogiri::HTML(raw)
       when '.html'
-        content = Nokogiri::HTML(File.read(filename))
+        raw = File.read(filename)
+        content = Nokogiri::HTML(raw)
     end
     post = {
       :created_at => File.ctime(filename),
       :link       => File.basename(filename, extension),
       :title      => content.xpath('//h3/text()').first.text,
       :preview    => content.xpath('//p/text()').first.text,
-      :document   => content
+      :raw        => raw
     }
     post
   end
 
-  def read_post(filename)
+  def self.read_post(filename)
     if (File.exists?("#{filename}.haml"))
-      content = Nokogiri::HTML(Haml::Engine.new(File.read("#{filename}.haml")).render)
-    case extension
-      when '.haml'
-        content = Nokogiri::HTML(Haml::Engine.new(File.read(filename)).render)
-      when '.html'
-        content = Nokogiri::HTML(File.read(filename))
+      self.parse_post("#{filename}.haml")
+    elsif (File.exists?("#{filename}.html"))
+      self.parse_post("#{filename}.html")
+    else
+      nil
     end
   end
 
