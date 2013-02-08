@@ -5,24 +5,19 @@ site:
     home: Home
     blog: blog
     about: about
-    languages: Other languages
+    languages: Translate to...
   footer:
-    credits: This site was built using Sinatra
+    credits: This site was built using
 
 blog:
-  title: Blog is coming soon
-  explanation: I'm looking for a Blog ruby gem... if you know one ping me :)
+  title: So this is my blog..
+  explanation: The problem is I'm too lazy to write english articles... if this blog is empty chech the spanish version
 
 about:
   title: Some things I want to say...
   body: !!html
-    <h4>Why Sinatra?</h4>
         <p>
-          Because is an easy and light Ruby framework. Easy to use, and easy to extend. And mainly... because is much better than Silex
-        </p>
-        <h4>Why Ruby?</h4>
-        <p>
-          PHP is not a challenge for Ruby. Honestly, Ruby is far away much better than PHP. If JAVA is a Lego and Ruby is Play doh, I don't know what is PHP compared with them. I'm very thankful to PHP for all the jobs, and the chance to learn lot of things around the development, but honestly, there is no way back to PHP in my life.
+          Most of sites have a page like this... perhaps some day I can add something interesting here :)
         </p>
 
 index:
@@ -44,7 +39,7 @@ index:
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <div class="alert alert-info">
-      I am not accepting any new work in the near future, so far.
+      Currently, I'm not looking for new job opportunities, neither a position in a company nor freelance jobs. Thanks!
     </div>
 
 not_found:

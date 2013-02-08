@@ -5,26 +5,20 @@ site:
     home: Inicio
     blog: Blog
     about: Acerca
-    languages: Otros lenguajes
+    languages: Traducir a...
   footer:
-    credits: Este sitio lo hice usando Sinatra
+    credits: Este sitio lo hice usando
 
 blog:
-  title: Todavia no termine el blog...
-  explanation: Estoy armandome "una especie de..." jekyll, aunque no le ato ni los cordones...
+  title: Y aqui terminamos...
+  explanation: En este lugar es donde me pongo en modo verbose...
 
 about:
-  title: Cosas a tener en cuenta del sitio
+  title: Ahora si, pongamonos serios...
   body: !!html
-    <h4>Porque usaste sinatra?</h4>
         <p>
-          Porque es un framework, simple, <b>muy facil de aprender</b> y facil de usar. Tambien es muy facil de extender y gracias
-          a las bondades de Ruby, se hace muy facil desarrollar, de una manera limpia. Y principalmente porque este es un sitio chico
-          y Sinatra es por lejos mucho mejor que Silex
-        </p>
-        <h4>Para, te vendiste a Ruby?</h4>
-        <p>
-          Ufff... que frase tan trillada, y triste. Lamentablemente escucho eso a diario
+          La mayoria de los sitios tiene una pagina como esta... y yo no iba a ser menos y arme una. En algun momento pondre algo
+          que valga la pena :)
         </p>
 
 index:
