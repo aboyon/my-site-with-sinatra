@@ -3,10 +3,10 @@
   #{t.blog.explanation}
 
 - entries.each do |entry|
-  %div.span6.post_block
-    %p.muted.pull-right(title="#{entry[:written]}")
+  %div.post_block
+    %p.post-date.muted.pull-right(title="#{entry[:written]}")
       #{entry[:written]}
     %h5
       %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title]}
-      %p.muted
-        #{entry[:preview].to_s}
+    %p.post-text
+      #{entry[:preview].to_s}

@@ -41,9 +41,9 @@ index:
     </p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <div class="alert alert-info">
+    <p class="muted">
       Por el momento no estoy tomando trabajo freelance, ni tengo un interes en un cambio laboral.
-    </div>
+    </p>
 
 not_found:
   header: Opalala... algo se rompio che...

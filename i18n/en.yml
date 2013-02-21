@@ -11,7 +11,7 @@ site:
 
 blog:
   title: So this is my blog..
-  explanation: The problem is I'm too lazy to write english articles... if this blog is empty chech the spanish version
+  explanation: The problem is I'm too lazy to write english articles... if this blog is empty check the spanish version
 
 about:
   title: Some things I want to say...
@@ -38,9 +38,9 @@ index:
     </p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <div class="alert alert-info">
+    <p class="muted">
       Currently, I'm not looking for new job opportunities, neither a position in a company nor freelance jobs. Thanks!
-    </div>
+    </p>
 
 not_found:
   header: Ups! something went wrong...

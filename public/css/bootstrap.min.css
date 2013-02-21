@@ -1,7 +1,7 @@
 /**
  * Credits to http://bootswatch.com/united/
  */
-@import url(//fonts.googleapis.com/css?family=Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Combo|Ubuntu|Titillium+Web|Oxygen);
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
 audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
 audio:not([controls]){display:none;}
