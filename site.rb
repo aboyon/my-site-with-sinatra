@@ -48,6 +48,7 @@ end
 get '/:locale/blog/post/:slug' do
   post = SiteApp.read_post("#{settings.blog_static_pages}/#{@locale}/#{params[:slug].downcase}")
   unless post.nil?
+    @title = post[:title]
     haml :blog_post, :locals => { 
       :permalink    => "#{@base_url}#{request.path_info}",
       :comment_hash => Digest::MD5.hexdigest(request.path_info),
