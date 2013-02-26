@@ -25,7 +25,8 @@ end
 
 get '/:locale/blog' do
   entries = []
-  Dir.entries("#{settings.blog_static_pages}/#{@locale}").each do |filename|
+  file_list = Dir.entries("#{settings.blog_static_pages}/#{@locale}").sort_by{ |filename| File.ctime("#{settings.blog_static_pages}/#{@locale}/#{filename}") }
+  file_list.reverse.each do |filename|
     unless ["..","."].include?(filename)
       begin
         post = SiteApp.parse_post("#{settings.blog_static_pages}/#{@locale}/#{filename}")
@@ -40,6 +41,7 @@ get '/:locale/blog' do
       end
     end
   end
+  entries.sort_by! {|filename| }
   haml :blog_index, :locals => { 
     :entries => entries
   }

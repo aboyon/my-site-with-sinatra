@@ -22,7 +22,7 @@ module SiteApp
       :created_at => File.ctime(filename),
       :link       => File.basename(filename, extension),
       :title      => content.xpath('//h3/text()').first.text,
-      :preview    => content.xpath('//p/text()').first.text,
+      :preview    => content.xpath('//p').first.text,
       :raw        => raw
     }
     post
