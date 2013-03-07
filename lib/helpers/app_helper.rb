@@ -15,7 +15,7 @@ module SiteApp
         raw = Haml::Engine.new(File.read(filename).force_encoding('utf-8')).render
         content = Nokogiri::HTML(raw)
       when '.html'
-        raw = File.read(filename).force_encoding('utf-8')
+        raw = File.read(filename).force_encoding("ISO-8859-1").encode("utf-8", replace: nil)
         content = Nokogiri::HTML(raw)
     end
     post = {
