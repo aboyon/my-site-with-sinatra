@@ -1,28 +1,3 @@
-%p.post-date.muted.pull-right
-  Written on #{created_at}
-
 %div.post_container
   #{raw}
 
-%div.discuss_comment
-  #disqus_thread
-    :javascript
-      var disqus_shortname = 'davidsilveira';
-      var disqus_identifier = '#{comment_hash}';
-      var disqus_url = '#{permalink}';
-      var disqus_title = '#{title}'
-      var disqus_developer = 1;
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-      function disqus_config() {
-        this.callbacks.onNewComment = [function() {
-          $.ajax({  url: '#{permalink}/disqus-sync' });
-        }];
-      }
-  %a.dsq-brlink(href="http://disqus.com")
-    comments powered by
-    %span.logo-disqus
-      Disqus

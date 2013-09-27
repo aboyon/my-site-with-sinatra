@@ -21,6 +21,21 @@ about:
           que valga la pena :)
         </p>
 
+phrases:
+  - "lo mejor que hizo la vieja, es el pibe que maneja"
+  - "subite sentate, callate y agarrate"
+  - "para mi que sean de manteca querida, gracias"
+  - "sabes cuantos Sr. quedarian en orsai si google se cayera un dia?"
+  - "centro atras es medio gol"
+  - "dos cabezazos en el area es gol"
+  - "para que te traje"
+  - "no te hagas el Dr. House, porque esto no es una serie"
+  - "te das cuenta que sos bueno, cuando luego de ver Breaking Bad solo queres aprender quimica"
+  - "la locura no tiene nada de romantico. (Diego Peretti)"
+  - "el amigo que trajiste es puro botines"
+  - "y que queres... al loco que gusta Tan Bionica, se venia venir eso"
+  - "dasela a Messi!, dasela a Messi!"
+
 index:
   body: !!html
     <p>
@@ -42,7 +57,7 @@ index:
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p class="muted">
-      Por el momento no estoy tomando trabajo freelance, ni tengo un interes en un cambio laboral.
+      <b>Por el momento no estoy tomando trabajo freelance, ni tengo un interes en un cambio laboral.</b>
     </p>
 
 not_found:

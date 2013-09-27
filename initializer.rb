@@ -2,6 +2,7 @@ require 'haml'
 require 'sinatra/r18n'
 require 'digest'
 require 'nokogiri'
+require 'sinatra/paginate'
 require_relative 'lib/helpers/app_helper'
 
 # setting the language depending on the user agent language

@@ -1,12 +1,6 @@
-%h4 #{t.blog.title}
-%p.muted 
-  #{t.blog.explanation}
-
 - entries.each do |entry|
   %div.post_block
-    %p.post-date.muted.pull-right(title="#{entry[:written]}")
-      #{entry[:written]}
-    %h5
+    %h4.post_title
       %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title]}
     %p.post-text
       #{entry[:preview].to_s}

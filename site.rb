@@ -11,7 +11,6 @@ set :allowed_post_format => ['html','haml']
 before do
   lang_found = request.path_info.scan(/[a-z]{2}/).first
   @locale = (R18n.available_locales.map(&:code).include?(lang_found)) ? lang_found : R18n::I18n.default
-  @phrase = SiteApp::random_phrases.sample
   @base_url = "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
 end
 

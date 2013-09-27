@@ -4,9 +4,8 @@ gem 'sinatra', :git => "git://github.com/sinatra/sinatra.git"
 
 gem 'haml'
 
-# let's give some styling to the page
-
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+#pagination 
+gem "sinatra-paginate", "~> 0.1.0"
 
 # Internationalization
 

@@ -20,6 +20,21 @@ about:
           Most of sites have a page like this... perhaps some day I can add something interesting here :)
         </p>
 
+phrases:
+  - "My momma always said, \"Life was like a box of chocolates. You never know what you're gonna get\""
+  - "he's dead Jim"
+  - "You're his daddy, Forrest."
+  - "I'm not a smart man... but I know what love is."
+  - "Why don't you love me, Jenny?"
+  - "God damn it, Gump! You're a god damn genius! This is the most outstanding answer I have ever heard. You must have a goddamn I.Q. of 160. You are goddamn gifted, Private Gump. Listen up, people"
+  - "Stupid is as stupid does."
+  - "better call saul"
+  - "You'll have to excuse my friend. He's a little slow. The town is back that way."
+  - "Just when I thought you couldn't possibly be any dumber, you go and do something like this... and totally redeem yourself!"
+  - " We got no food, no jobs... our PETS' HEADS ARE FALLING OFF!"
+  - "I got worms!, Mary"
+  - "you want to play rough say hello to my little friend!"
+  
 index:
   body: !!html
     <p><b>Thanks for visit my page.</b> If you have interest about my professional services, please feel free to visit my resume visinting my
@@ -39,7 +54,7 @@ index:
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p class="muted">
-      Currently, I'm not looking for new job opportunities, neither a position in a company nor freelance jobs. Thanks!
+      <b>Currently, I'm not looking for new job opportunities, neither a position in a company nor freelance jobs. Thanks!</b>
     </p>
 
 not_found:

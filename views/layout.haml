@@ -4,20 +4,21 @@
     - string = defined?(@title) ? "#{@title}" : "#{t.site.title}"
     %title David Silveira - #{string}
     %meta{ :name => 'viewport', :content => 'width=device-width, initial-scale=1.0, maximum-scale=1.0' }
-    %link(rel="stylesheet" href="/css/bootstrap.min.css")
-    %link(rel="stylesheet" href="/css/bootstrap-responsive.min.css")
-    %link(rel="stylesheet" href="/css/style.css")
+    %link(rel="stylesheet" href="/tb-3.0.0/css/bootstrap.min.css")
+    %link(rel="stylesheet" href="/tb-3.0.0/css/bootstrap-responsive.min.css")
+    %link(rel="stylesheet" href="/tb-3.0.0/css/style.css")
   %body.preview(data-spy='scroll' data-target='.subnav' data-offset='0')
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar.collapsed(data-toggle="collapse" data-target=".nav-collapse")
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle(data-toggle="collapse" data-target=".nav-collapse")
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="/") David Silveira
-          #main-menu.nav-collapse
-            %ul.nav
+          %a.navbar-brand(href="/") 
+            %span.title david.silveira
+          #main-menu.navbar-collapse.collapse
+            %ul.nav.navbar-nav
               %li
                 %a(href="/#{@locale}") #{t.site.menu.home}
               %li
@@ -33,22 +34,23 @@
     #wrapper.container
       %header
         %div.phrase
-          #{@phrase}
+          "...#{t.phrases.sample}..."
 
       #content
         = yield
     %footer.footer.container
-      %p.auxiliar-languages
-        - r18n.available_locales.each do |locale|
-          %a( href="/#{locale.code}" )= locale.title
-          |
-      %p
-        #{t.site.footer.credits}
-        %a(href='http://www.sinatrarb.com/') Sinatra
-        , 
-        %a(href='http://www.haml.com/') HAML
-        #{t.site.and}  
-        %a(href='http://twitter.github.com/bootstrap/') Twitter Bootstrap
+      %div.wrapper
+        %p.auxiliar-languages
+          - r18n.available_locales.each do |locale|
+            %a( href="/#{locale.code}" )= locale.title
+            |
+        %p
+          #{t.site.footer.credits}
+          %a(href='http://www.sinatrarb.com/') Sinatra
+          , 
+          %a(href='http://www.haml.com/') HAML
+          #{t.site.and}  
+          %a(href='http://twitter.github.com/bootstrap/') Twitter Bootstrap
     %script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     %script(src='/js/bootstrap.min.js')
     %script(src='/js/app.js')
