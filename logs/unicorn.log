@@ -1,0 +1,14 @@
+I, [2015-05-30T21:14:07.476641 #7681]  INFO -- : listening on addr=/tmp/unicorn.my-site-with-sinatra.sock fd=10
+I, [2015-05-30T21:14:07.477416 #7681]  INFO -- : worker=0 spawning...
+I, [2015-05-30T21:14:07.479756 #7681]  INFO -- : worker=1 spawning...
+I, [2015-05-30T21:14:07.482291 #7681]  INFO -- : master process ready
+I, [2015-05-30T21:14:07.486537 #7684]  INFO -- : worker=0 spawned pid=7684
+I, [2015-05-30T21:14:07.494745 #7686]  INFO -- : worker=1 spawned pid=7686
+I, [2015-05-30T21:14:07.495468 #7684]  INFO -- : Refreshing Gem list
+I, [2015-05-30T21:14:07.497408 #7686]  INFO -- : Refreshing Gem list
+I, [2015-05-30T21:14:08.276247 #7686]  INFO -- : worker=1 ready
+I, [2015-05-30T21:14:08.276392 #7684]  INFO -- : worker=0 ready
+D, [2015-05-31T01:02:37.156427 #7681] DEBUG -- : waiting 16.0s after suspend/hibernation
+I, [2015-05-31T05:14:57.922917 #7681]  INFO -- : reaped #<Process::Status: pid 7684 exit 0> worker=0
+I, [2015-05-31T05:14:57.991398 #7681]  INFO -- : reaped #<Process::Status: pid 7686 exit 0> worker=1
+I, [2015-05-31T05:14:58.074029 #7681]  INFO -- : master complete

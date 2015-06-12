@@ -11,3 +11,5 @@ gem "sinatra-paginate", "~> 0.1.0"
 
 gem "sinatra-r18n", "~> 1.1.3"
 gem "nokogiri", "~> 1.5.6"
+
+gem 'pry-debugger'
