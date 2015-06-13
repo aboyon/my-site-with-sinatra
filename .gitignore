@@ -3,3 +3,4 @@ Gemfile.lock
 config/database.yml
 config/config.yml
 views/auto-generated-views
+logs/*
