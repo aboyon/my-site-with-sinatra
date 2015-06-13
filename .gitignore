@@ -4,3 +4,5 @@ config/database.yml
 config/config.yml
 views/auto-generated-views
 unicorn.rb
+logs/
+node_modules/
