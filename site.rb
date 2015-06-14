@@ -8,6 +8,8 @@ require 'digest'
 require 'nokogiri'
 require 'sinatra/paginate'
 
+Dir["./lib/**/*.rb"].each { |f| require f }
+
 set :haml, :format => :html5
 set :blog_static_pages => "views/auto-generated-views/blog/"
 set :default_language => "en"
@@ -23,7 +25,7 @@ get '/' do
 end
 
 get '/:locale' do
-  haml "#{@locale}/index".to_sym
+  haml "#{params[:locale]}/index".to_sym
 end
 
 get '/:locale/blog' do
@@ -56,7 +58,7 @@ get '/:locale/blog/post/:slug' do
 end
 
 get '/:locale/notes' do
-  haml "#{@locale}/notes".to_sym
+  haml "#{params[:locale]}/notes".to_sym
 end
 
 not_found do
