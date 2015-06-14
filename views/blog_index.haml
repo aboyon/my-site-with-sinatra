@@ -1,6 +1,7 @@
 - entries.each do |entry|
-  %div.post_block
-    %h4.post_title
-      %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title]}
-    %p.post-text
-      #{entry[:preview].to_s}
+  %section
+    .row
+      %h2.post_title
+        %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title]}
+      %p.post-text
+        #{entry[:preview].to_s}
