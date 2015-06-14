@@ -6,3 +6,7 @@ views/auto-generated-views
 unicorn.rb
 logs/
 node_modules/
+public/v4/
+public/assets/*
+public/css/
+public/tb-3.0.0
