@@ -11,6 +11,7 @@ require 'sinatra/paginate'
 Dir["./lib/**/*.rb"].each { |f| require f }
 
 set :haml, :format => :html5
+set :views, "views"
 set :blog_static_pages => "views/auto-generated-views/blog/"
 set :default_language => "en"
 
