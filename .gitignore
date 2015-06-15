@@ -4,3 +4,11 @@ config/database.yml
 config/config.yml
 views/auto-generated-views
 logs/*
+unicorn.rb
+logs/
+node_modules/
+public/v4/
+public/assets/*
+public/css/
+public/fonts/*
+public/tb-3.0.0
