@@ -1,15 +1,11 @@
 source "https://rubygems.org"
 
-gem 'sinatra', :git => "git://github.com/sinatra/sinatra.git"
-
-gem 'haml'
-
-#pagination 
-gem "sinatra-paginate", "~> 0.1.0"
-
-# Internationalization
-
+gem 'sinatra', '1.4.5'
+gem 'haml', '4.0.6'
 gem "sinatra-r18n", "~> 1.1.3"
-gem "nokogiri", "~> 1.5.6"
+gem "sinatra-paginate", "~> 0.1.0"
+gem "nokogiri", "~> 1.6.8"
 
-gem 'pry-debugger'
+group :development do
+  gem 'pry'
+end
