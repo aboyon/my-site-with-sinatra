@@ -10,14 +10,13 @@ module SiteApp
         raw = File.read(filename).force_encoding("ISO-8859-1").encode("utf-8", replace: nil)
         content = Nokogiri::HTML(raw)
     end
-    post = {
+    {
       :created_at => File.ctime(filename),
       :link       => File.basename(filename, extension),
       :title      => content.xpath('//h3/text()').first.text,
       :preview    => content.xpath('//p').first.text,
       :raw        => raw
     }
-    post
   end
 
   def self.read_post(filename)
