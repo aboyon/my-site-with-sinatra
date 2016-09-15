@@ -16,14 +16,14 @@ Dir["./lib/**/*.rb"].each { |f| require f }
 
 set :haml, :format => :html5
 set :views, "views"
-set :blog_static_pages => "views/auto-generated-views/blog/"
+set :blog_static_pages => "views/auto-generated-views/blog"
 set :default_language => "en"
 
 before do
   url_lang = request.path_info.scan(/[a-z]{2}/).first
-  @locale = (R18n.available_locales.map(&:code).include?(url_lang)) ? url_lang : settings.default_language
+  @locale = (%w(en es).include?(url_lang)) ? url_lang : settings.default_language
   @base_url = "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
-  @blog_folder = "#{settings.blog_static_pages}/#{@locale}"
+  @blog_folder = "#{Dir.pwd}/#{settings.blog_static_pages}/#{@locale}"
 end
 
 get '/' do
@@ -31,12 +31,13 @@ get '/' do
 end
 
 get '/:locale' do
-  haml "#{params[:locale]}/index".to_sym
+  redirect @locale, 303 unless %w(en es).include?(params[:locale])
+  haml "#{@locale}/index".to_sym
 end
 
 get '/:locale/blog' do
 
-  file_list = Dir.entries(@blog_folder).reject { |file| %w(.. .).include?(filename) }.sort_by do |filename|
+  file_list = Dir.entries(@blog_folder).reject { |file| %w(.. .).include?(file) }.sort_by do |filename|
     File.ctime("#{@blog_folder}/#{filename}")
   end
 
