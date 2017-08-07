@@ -25,7 +25,7 @@ gulp.task('compress_css', function () {
     .pipe(concat('all.min.css', {newLine: '\n\n'}))
     .pipe(gulp.dest('public/assets'));
 
-  return gulp.src('assets/font-awesome/css/font-awesome.min.css').pipe(concat('fonts.min.css'))
+  return gulp.src('assets/font-awesome/css/font-awesome.css').pipe(concat('fonts.min.css'))
     .pipe(gulp.dest('public/assets'));
 });
 

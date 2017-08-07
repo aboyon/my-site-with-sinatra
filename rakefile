@@ -3,9 +3,8 @@ require 'fileutils'
 
 namespace :app do
   desc "Install repare the blog app"
-  task(:blog) do
+  task :blog do
     target_folder = "views/auto-generated-views/blog"
-    puts "***********************************************************************"
     puts "Creating folder #{target_folder}..."
     puts "Current location: #{Dir.pwd}"
     ["en","es"].each do |locale|
@@ -16,7 +15,6 @@ namespace :app do
         puts "now you should run rake:app:blog in order to push the new posts..."
       end
     end
-    puts "***********************************************************************"
   end
 
 end
