@@ -38,13 +38,13 @@ end
 get '/:locale/blog' do
 
   file_list = Dir["#{@blog_folder}/**.html"].sort_by do |filename|
-    File.ctime("#{@blog_folder}/#{filename}")
+    File.ctime(filename)
   end
 
   entries = [].tap do |entry|
     file_list.reverse.each do |filename|
       begin
-        post = SiteApp.parse_post("#{@blog_folder}/#{filename}")
+        post = SiteApp.parse_post(filename)
         next if post[:title].nil?
         entry << {
           :written  => post[:created_at],
