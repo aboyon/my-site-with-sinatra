@@ -19,11 +19,11 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: 'Lobster', sans-serif, Helvetica, Arial, sans-serif;
+}
+h5 {
+  font-family: Oxygen, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 hr.star-light,
 hr.star-primary {
@@ -37,7 +37,7 @@ hr.star-primary {
 hr.star-light:after,
 hr.star-primary:after {
   content: "\f005";
-  font-family: FontAwesome;
+  font-family: 'Oxygen';
   display: inline-block;
   position: relative;
   top: -0.8em;
@@ -63,7 +63,6 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18bc9c;
   color: white;
 }
 header .container {
@@ -76,7 +75,7 @@ header img {
 }
 header .intro-text .name {
   display: block;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Oxygen, sans-serif, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2em;
@@ -109,16 +108,18 @@ header .intro-text .skills {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all 0.3s;
+    font-family: "Russo One";
   }
   .navbar-fixed-top.navbar-shrink {
     padding: 10px 0;
   }
   .navbar-fixed-top.navbar-shrink .navbar-brand {
     font-size: 1.5em;
+    font-family: "Russo One";
   }
 }
 .navbar {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Oxygen", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -272,9 +273,6 @@ section.success a.active {
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
 }
-footer {
-  color: #2c3e50;
-}
 footer h3 {
   margin-bottom: 30px;
 }
@@ -398,11 +396,11 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: 'Lobster', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h5 {
+  font-family: Oxygen, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 hr.star-light,
 hr.star-primary {
@@ -416,7 +414,7 @@ hr.star-primary {
 hr.star-light:after,
 hr.star-primary:after {
   content: "\f005";
-  font-family: FontAwesome;
+  font-family: 'Lobster';
   display: inline-block;
   position: relative;
   top: -0.8em;
@@ -442,7 +440,6 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18bc9c;
   color: white;
 }
 header .container {
@@ -455,7 +452,7 @@ header img {
 }
 header .intro-text .name {
   display: block;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lobster', "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2em;
@@ -466,7 +463,7 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   .navbar-brand {
-    color: #2C3E50;
+    color: #B58900;
   }
   #wrapper {
     margin-top: 110px;
@@ -506,7 +503,7 @@ header .intro-text .skills {
   }
 }
 .navbar {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Oxygen", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -668,7 +665,6 @@ form .row:first-child .floating-label-form-group {
 }
 footer {
   margin-top: 50px;
-  color: #2c3e50;
 }
 footer h3 {
   margin-bottom: 30px;
@@ -793,11 +789,11 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: 'Lobster', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h5 {
+  font-family: Oxygen, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 hr.star-light,
 hr.star-primary {
@@ -811,7 +807,7 @@ hr.star-primary {
 hr.star-light:after,
 hr.star-primary:after {
   content: "\f005";
-  font-family: FontAwesome;
+  font-family: 'Oxygen';
   display: inline-block;
   position: relative;
   top: -0.8em;
@@ -837,7 +833,6 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18bc9c;
   color: white;
 }
 header .container {
@@ -850,7 +845,7 @@ header img {
 }
 header .intro-text .name {
   display: block;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Oxygen", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2em;
@@ -892,7 +887,7 @@ header .intro-text .skills {
   }
 }
 .navbar {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Oxygen", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -1045,9 +1040,6 @@ section.success a.active {
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
-}
-footer {
-  color: #2c3e50;
 }
 footer h3 {
   margin-bottom: 30px;

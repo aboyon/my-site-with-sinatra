@@ -37,30 +37,30 @@ end
 
 get '/:locale/blog' do
 
-  file_list = Dir.entries(@blog_folder).reject { |file| %w(.. .).include?(file) }.sort_by do |filename|
+  file_list = Dir["#{@blog_folder}/**.html"].sort_by do |filename|
     File.ctime("#{@blog_folder}/#{filename}")
   end
 
-  entries = []
-
-  file_list.reverse.each do |filename|
-
-    begin
-      post = SiteApp.parse_post("#{@blog_folder}/#{filename}")
-      next if post[:title].nil?
-      entries << {
-        :written  => post[:created_at],
-        :link     => post[:link],
-        :preview  => post[:preview],
-        :title    => post[:title]
-      }
-    rescue => e
-      @error = e.message
+  entries = [].tap do |entry|
+    file_list.reverse.each do |filename|
+      begin
+        post = SiteApp.parse_post("#{@blog_folder}/#{filename}")
+        next if post[:title].nil?
+        entry << {
+          :written  => post[:created_at],
+          :link     => post[:link],
+          :preview  => post[:preview],
+          :title    => post[:title]
+        }
+      rescue => e
+        @error = e.message
+      end
     end
   end
 
+
   if @error
-    haml :rip_something
+    haml :rip_something, :locals => {:error => @error}
   else
     haml :blog_index, :locals => { :entries => entries }
   end
