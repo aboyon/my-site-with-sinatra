@@ -23,16 +23,9 @@ gulp.task('compress_css', function () {
   gulp.src('assets/css/*.css')
     .pipe(minify_css({compatibility: 'ie8'}))
     .pipe(concat('all.min.css', {newLine: '\n\n'}))
-    .pipe(gulp.dest('public/assets'));
-
-  return gulp.src('assets/font-awesome/css/font-awesome.css').pipe(concat('fonts.min.css'))
-    .pipe(gulp.dest('public/assets'));
-});
-
-gulp.task('compress_fonts', function () {
-  gulp.src('assets/fonts/*.*').pipe(gulp.dest('public/fonts/'));
+    .pipe(gulp.dest('public/assets'))
 });
 
 gulp.task('precompile:assets', function(s){
-  runSequence('compress_js','less','compress_css','compress_fonts',s);
+  runSequence('compress_js','less','compress_css',s);
 })
