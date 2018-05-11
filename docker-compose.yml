@@ -1,0 +1,9 @@
+version: '3'
+services:
+  api:
+    build: .
+    command: bundle exec rackup --host 0.0.0.0 -p 4567
+    volumes:
+      - .:/devigetapi/api
+    ports:
+      - "4567:4567"

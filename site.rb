@@ -18,6 +18,9 @@ set :haml, :format => :html5
 set :views, "views"
 set :blog_static_pages => "views/auto-generated-views/blog"
 set :default_language => "en"
+set :public_folder, 'public'
+
+register Sinatra::R18n
 
 before do
   url_lang = request.path_info.scan(/[a-z]{2}/).first
@@ -37,12 +40,10 @@ end
 
 get '/:locale/blog' do
 
-  file_list = Dir["#{@blog_folder}/**.html"].sort_by do |filename|
-    File.ctime(filename)
-  end
+  file_list = Dir["#{@blog_folder}/**.html"].sort { |f1, f2| File.mtime(f1) <=> File.mtime(f2) }
 
   entries = [].tap do |entry|
-    file_list.reverse.each do |filename|
+    file_list.each do |filename|
       begin
         post = SiteApp.parse_post(filename)
         next if post[:title].nil?
@@ -54,10 +55,10 @@ get '/:locale/blog' do
         }
       rescue => e
         @error = e.message
+        break
       end
     end
   end
-
 
   if @error
     haml :rip_something, :locals => {:error => @error}

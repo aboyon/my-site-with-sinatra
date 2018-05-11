@@ -3,5 +3,7 @@
     .row
       %h2.post_title
         %a(href="/#{@locale}/blog/post/#{entry[:link]}") #{entry[:title]}
+      %p.muted_2
+        #{t.blog.post_date_label}: #{l entry[:written], :human}
       %p.post-text
         #{entry[:preview].to_s}

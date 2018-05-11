@@ -12,6 +12,7 @@ site:
 blog:
   title: So this is my blog..
   explanation: The problem is I'm too lazy to write english articles... if this blog is empty check the spanish version
+  post_date_label: I wrote this at
 
 about:
   title: Some things I want to say...
