@@ -1,9 +1,13 @@
 version: '3'
 services:
-  api:
-    build: .
+  aboyon:
+    container_name: aboyon
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: bundle exec rackup --host 0.0.0.0 -p 4567
     volumes:
-      - .:/devigetapi/api
+      - .:/app:cached
     ports:
       - "4567:4567"
+    env_file: .env

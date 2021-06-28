@@ -19,6 +19,7 @@ set :views, "views"
 set :blog_static_pages => "views/auto-generated-views/blog"
 set :default_language => "en"
 set :public_folder, 'public'
+set :cdn_url, ENV['SITE_CDN']
 
 register Sinatra::R18n
 

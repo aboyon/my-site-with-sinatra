@@ -132,7 +132,6 @@ header .intro-text .skills {
 .navbar .navbar-nav li a:focus {
   outline: none;
 }
-.navbar-default,
 .navbar-inverse {
   border: none;
 }
@@ -488,6 +487,7 @@ header .intro-text .skills {
     -webkit-transition: padding .3s;
     -moz-transition: padding .3s;
     transition: padding 0.3s;
+    border-bottom: 1px solid #006400;
   }
   .navbar-fixed-top .navbar-brand {
     font-size: 2em;
@@ -833,7 +833,7 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  color: white;
+  color: #8db600;
 }
 header .container {
   padding-top: 100px;

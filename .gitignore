@@ -12,3 +12,4 @@ public/assets/*
 public/css/
 public/fonts/*
 public/tb-3.0.0
+.env
