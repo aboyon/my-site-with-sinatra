@@ -12,10 +12,6 @@ variable "ssh_fingerprint" {}
 variable "site_cdn" {}
 variable "pvt_key" {} # path to you private key. Won't be imported
 
-data "template_file" "userdata" {
-  template = "${file("./recipes/shell/provision.sh")}"
-}
-
 provider "digitalocean" {
   token = var.do_token
 }
@@ -27,7 +23,6 @@ resource "digitalocean_droplet" "web_box" {
   size      = "s-1vcpu-1gb"
   tags      = ["ruby","app"]
   ssh_keys  = [var.ssh_fingerprint]
-  user_data = "${data.template_file.userdata.rendered}"
 
   connection {
     host = self.ipv4_address
