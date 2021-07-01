@@ -40,8 +40,8 @@ resource "digitalocean_droplet" "web_box" {
   provisioner "remote-exec" {
     inline = [
       "mkdir -p /app",
-      "echo SITE_CDN=${var.site_cdn} > /app/.env",
-      "git clone https://github.com/aboyon/my-site-with-sinatra.git /app"
+      "git clone https://github.com/aboyon/my-site-with-sinatra.git /app",
+      "echo SITE_CDN=${var.site_cdn} > /app/.env"
     ]
   }
 }
