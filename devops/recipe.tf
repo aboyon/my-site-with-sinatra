@@ -28,12 +28,19 @@ resource "digitalocean_droplet" "web_box" {
   ssh_keys  = [var.ssh_fingerprint]
   user_data = "${data.template_file.userdata.rendered}"
 
+  connection {
+    host = self.ipv4_address
+    user = "root"
+    type = "ssh"
+    private_key = "${file(var.pvt_key)}"
+    timeout = "5m"
+  }
+
   provisioner "remote-exec" {
     inline = [
       "mkdir -p /app",
       "echo SITE_CDN=${var.site_cdn} > /app/.env"
-      "git clone https://github.com/aboyon/my-site-with-sinatra.git /app",
-      "sh /app/devops/recipes/shell/provision.sh"
+      "git clone https://github.com/aboyon/my-site-with-sinatra.git /app"
     ]
   }
 }
