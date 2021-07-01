@@ -10,6 +10,7 @@ terraform {
 variable "do_token" {}
 variable "ssh_fingerprint" {}
 variable "site_cdn" {}
+variable "pvt_key" {} # path to you private key. Won't be imported
 
 data "template_file" "userdata" {
   template = "${file("./recipes/shell/provision.sh")}"
