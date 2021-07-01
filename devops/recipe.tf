@@ -8,16 +8,32 @@ terraform {
 }
 
 variable "do_token" {}
+variable "ssh_fingerprint" {}
+variable "site_cdn" {}
+
+data "template_file" "userdata" {
+  template = "${file("./recipes/shell/provision.sh")}"
+}
 
 provider "digitalocean" {
   token = var.do_token
 }
 
 resource "digitalocean_droplet" "web_box" {
-  image  = "6376601"
-  ipv4_address = "104.131.187.9"
-  name   = "web-box"
-  region = "nyc2"
-  size   = "512mb"
-  urn    = "do:droplet:3783172"
+  image     = "ubuntu-20-04-x64"
+  name      = "web-box"
+  region    = "nyc1"
+  size      = "s-1vcpu-1gb"
+  tags      = ["ruby","app"]
+  ssh_keys  = [var.ssh_fingerprint]
+  user_data = "${data.template_file.userdata.rendered}"
+
+  provisioner "remote-exec" {
+    inline = [
+      "mkdir -p /app",
+      "echo SITE_CDN=${var.site_cdn} > /app/.env"
+      "git clone https://github.com/aboyon/my-site-with-sinatra.git /app",
+      "sh /app/devops/recipes/shell/provision.sh"
+    ]
+  }
 }
