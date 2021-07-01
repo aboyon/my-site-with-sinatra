@@ -6,6 +6,7 @@ gem 'sinatra-r18n', '~> 3.0.3'
 gem 'sinatra-paginate'
 gem 'nokogiri'
 gem 'unicorn'
+gem 'webrick'
 
 group :development do
   gem 'pry'

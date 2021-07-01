@@ -1,4 +1,3 @@
-Gemfile.lock
 .rvmrc
 config/database.yml
 config/config.yml
@@ -13,3 +12,7 @@ public/css/
 public/fonts/*
 public/tb-3.0.0
 .env
+*.tfstate
+devops/.terraform
+devops/.terraform*
+devops/*.tfstate*

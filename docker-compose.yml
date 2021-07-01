@@ -9,5 +9,5 @@ services:
     volumes:
       - .:/app:cached
     ports:
-      - "4567:4567"
+      - "80:4567"
     env_file: .env
