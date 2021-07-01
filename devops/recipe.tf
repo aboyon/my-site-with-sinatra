@@ -41,7 +41,8 @@ resource "digitalocean_droplet" "web_box" {
     inline = [
       "mkdir -p /app",
       "git clone https://github.com/aboyon/my-site-with-sinatra.git /app",
-      "echo SITE_CDN=${var.site_cdn} > /app/.env"
+      "echo SITE_CDN=${var.site_cdn} > /app/.env",
+      "sh /app/devops/recipes/shell/provision.sh"
     ]
   }
 }
